@@ -79,6 +79,7 @@ if BF then
         end
     end
     coroutine.wrap(watch_level)()
+    print("Roblox Watcher Loaded!")
 else
     print("Not Supported")
 end
