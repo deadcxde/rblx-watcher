@@ -95,7 +95,12 @@ if BF then
         fastSpawn,fastWait,delay = task.spawn,task.wait,task.delay
         if is_need_to_wait_level == false then return end
         if second_sea then
-            if plr.Data.Level.Value < 800 then
+            if plr.Data.Level.Value < 1000 then
+                auto_run_farm()
+            end
+        end
+        if first_sea then
+            if plr.Data.Level.Value < 700 then
                 auto_run_farm()
             end
         end
