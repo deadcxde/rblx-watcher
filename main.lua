@@ -67,7 +67,7 @@ if BF then
         }
         game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer(unpack(args)) 
         getgenv()._G.AutoFarm = true
-        print("Roblox Watcher | Auto Farm Started Automatically")
+        print("Roblox Watcher, Auto Farm Started Automatically")
     end
     local function watch_level()
         task = task or getrenv().task;
