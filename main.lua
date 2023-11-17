@@ -46,10 +46,13 @@ if BF then
     local function send_webhook()
         if first_sea then
             functext = "TRYING TO COMPLETE SECOND SEA"
+        end
         if second_sea then 
             functext = "Stopping farm and going to bartilo quest because max level at second sea"
+        end
         if second_sea then 
             functext = "Stopping farm and going to do YAMA sword because max level at second sea"
+        end
         local Embed = {
             ["title"] = "__**" .. plr.Name .. "**__",
             ["description"] = "**Name: **"..plr.Name.."\n**Reached " .. plr.Data.Level.Value .. " level!**\n**Money: **" .. plr.Data.Beli.Value .. "\n\n**".. functext .."**",
@@ -76,7 +79,7 @@ if BF then
     end
     local function stop_farm_third_sea()
         getgenv()._G.AutoFarm = false
-    endqqq
+    end
     local function run_bartilo()
         getgenv()._G.AutoFarm = false
         getgenv()._G.AutoBartilo = true
