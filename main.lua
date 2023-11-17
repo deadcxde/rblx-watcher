@@ -1,4 +1,3 @@
-print("Trying to load")
 local placeId = game.PlaceId
 if placeId == 2753915549 or placeId == 4442272183 or placeId == 7449423635 then
     BF = true
@@ -14,6 +13,13 @@ if placeId == 7449423635 then
 end
 if BF then
     repeat wait() until game:IsLoaded()
+    local function Notification(text)
+        local StarterGui = game:GetService("StarterGui")
+        StarterGui:SetCore("SendNotification", {
+            Title = "Roblox Watcher";
+            Text = text
+        })
+    end
     local plr = game.Players.LocalPlayer
     local level_need_to_reach = 0
     local is_need_to_wait_level = false
@@ -68,7 +74,7 @@ if BF then
         }
         game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer(unpack(args)) 
         getgenv()._G.AutoFarm = true
-        print("Roblox Watcher, Auto Farm Started Automatically")
+        Notification("Auto Farm Started Automatically")
     end
     local function watch_level()
         task = task or getrenv().task;
@@ -92,7 +98,7 @@ if BF then
             fastWait(.5)
         end
     end
-    print("Roblox Watcher Loaded!")
+    Notification("Roblox Watcher Loaded!")
     coroutine.wrap(watch_level)()
 else
     print("Not Supported")
