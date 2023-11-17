@@ -1,4 +1,4 @@
-local library = {RainbowColorValue = 0, HueSelectionPosition = 0}
+local library = {RainbowColorValue = 1, HueSelectionPosition = 0}
 function library:Notification(name)
     local NotificationHold = Instance.new("TextButton")
     local NotificationFrame = Instance.new("Frame")
