@@ -44,9 +44,15 @@ if BF then
     local OSTime = os.time()
     local Time = os.date('!*t', OSTime)
     local function send_webhook()
+        if first_sea then
+            functext = "TRYING TO COMPLETE SECOND SEA"
+        if second_sea then 
+            functext = "Stopping farm and going to bartilo quest because max level at second sea"
+        if second_sea then 
+            functext = "Stopping farm and going to do YAMA sword because max level at second sea"
         local Embed = {
             ["title"] = "__**" .. plr.Name .. "**__",
-            ["description"] = "**Name: **"..plr.Name.."\n**Reached " .. plr.Data.Level.Value .. " level!**\n**Money: **" .. plr.Data.Beli.Value .. "\n\n*TRYING TO GO NEXT SEA IF LEVEL 700*",
+            ["description"] = "**Name: **"..plr.Name.."\n**Reached " .. plr.Data.Level.Value .. " level!**\n**Money: **" .. plr.Data.Beli.Value .. "\n\n**".. functext .."**",
             ["type"] = "rich",
             ["color"] = tonumber(0xffff00),
             ["footer"] = {
@@ -63,9 +69,17 @@ if BF then
             Body = game:GetService'HttpService':JSONEncode({embeds = {Embed};});
         };
     end
+
     local function run_next_world()
         getgenv()._G.AutoFarm = false
         getgenv()._G.Auto_New_World = true
+    end
+    local function stop_farm_third_sea()
+        getgenv()._G.AutoFarm = false
+    endqqq
+    local function run_bartilo()
+        getgenv()._G.AutoFarm = false
+        getgenv()._G.AutoBartilo = true
     end
     local function auto_run_farm()
         local args = {
@@ -92,6 +106,10 @@ if BF then
                 send_webhook()
                 if first_sea then
                     run_next_world()
+                elseif second_sea then
+                    run_bartilo()
+                elseif third_sea then
+                    stop_farm_third_sea()
                 end
                 return
             end
