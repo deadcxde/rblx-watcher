@@ -12,6 +12,7 @@ if placeId == 7449423635 then
     third_sea = true
 end
 if BF then
+    repeat wait() until game:IsLoaded()
     local plr = game.Players.LocalPlayer
     local level_need_to_reach = 0
     local is_need_to_wait_level = false
@@ -39,7 +40,7 @@ if BF then
     local function send_webhook()
         local Embed = {
             ["title"] = "__**" .. plr.Name .. "**__",
-            ["description"] = "**Name: **"..plr.Name.."\n**Reached " .. plr.Data.Level.Value .. " level!**\n**Money: **" .. plr.Data.Beli.Value .. "\n\n*TRYING TO GO NEXT SEA IF LEVEL 700*",
+            ["description"] = "**Name: **"..plr.Name.."\n**Reached " .. plr.Data.Level.Value .. " level!**\n**Money:**" .. plr.Data.Beli.Value .. "\n\n*TRYING TO GO NEXT SEA IF LEVEL 700*",
             ["type"] = "rich",
             ["color"] = tonumber(0xffff00),
             ["footer"] = {
