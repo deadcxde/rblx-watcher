@@ -34,13 +34,12 @@ if BF then
             level_need_to_reach = 2550
         end
     end
-    
     local OSTime = os.time()
     local Time = os.date('!*t', OSTime)
     local function send_webhook()
         local Embed = {
             ["title"] = "__**" .. plr.Name .. "**__",
-            ["description"] = "**Name: **"..plr.Name.."\n**Reached " .. plr.Data.Level.Value .. " level!**\n**Money:**" .. plr.Data.Beli.Value .. "\n\n*TRYING TO GO NEXT SEA IF LEVEL 700*",
+            ["description"] = "**Name: **"..plr.Name.."\n**Reached " .. plr.Data.Level.Value .. " level!**\n**Money: **" .. plr.Data.Beli.Value .. "\n\n*TRYING TO GO NEXT SEA IF LEVEL 700*",
             ["type"] = "rich",
             ["color"] = tonumber(0xffff00),
             ["footer"] = {
@@ -63,13 +62,13 @@ if BF then
     end
     local function auto_run_farm()
         local args = {
-			[1] = "SetTeam",
-			[2] = "Pirates"
-		}
-		game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer(unpack(args)) 
-        getgenv._G.AutoFarm = true
+            [1] = "SetTeam",
+            [2] = "Pirates"
+        }
+        game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer(unpack(args)) 
+        getgenv()._G.AutoFarm = true
+        print("Roblox Watcher | Auto Farm Started Automatically")
     end
-
     local function watch_level()
         task = task or getrenv().task;
         fastSpawn,fastWait,delay = task.spawn,task.wait,task.delay
@@ -90,6 +89,7 @@ if BF then
             fastWait(.5)
         end
     end
+    print("Roblox Watcher Loaded!")
     coroutine.wrap(watch_level)()
 else
     print("Not Supported")
