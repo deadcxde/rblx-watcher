@@ -76,6 +76,8 @@ if BF then
         if second_sea then
             if plr.Data.Level.Value < 800 then
                 auto_run_farm()
+            end
+        end
         while true do
             if plr.Data.Level.Value >= level_need_to_reach then
                 level_need_to_reach = 0
